@@ -1,0 +1,27 @@
+{
+  "name": "dtk",
+  "version": "0.1.0",
+  "description": "Data toolkit. Utilities for dealing with data in Node.js.",
+  "main": "src/dtk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mhkeller/dtk.git"
+  },
+  "keywords": [
+    "node",
+    "data",
+    "toolkit",
+    "csv",
+    "json",
+    "dbf"
+  ],
+  "author": "Michael Keller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhkeller/dtk/issues"
+  },
+  "homepage": "https://github.com/mhkeller/dtk"
+}
