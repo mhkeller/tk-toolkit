@@ -3,18 +3,34 @@ var fs          = require('fs'),
     toDbf       = require('dbf'),
     fromDbf     = require('node-dbf');
 
+function discernFormat(file_name){
+  var name_arr = file_name.split('\.')
+  format_name = name_arr[name_arr.length - 1];
+  return format_name
+}
+
+function discernParser(file_name, delimiter){
+  if (delimiter) return dsv(delimiter)
+  var format = discernFormat(file_name);
+  return parsers[format]
+}
+
 var parsers = {
-  psv: dsv('|')
+  json: JSON,
+  csv: dsv.csv,
+  tsv: dsv.tsv,
+  psv: dsv.dsv('|')
+  Dbf_Parser: require('node-dbf')
 }
 
 var readers = {
   readCsv: function(path, cb){
     fs.readFile(path, 'utf8', function(err, data){
-      cb(err, dsv.csv.parse(data));    
+      cb(err, parsers.csv.parse(data));    
     })
   },
   readCsvSync: function(path){
-    return dsv.csv.parse(fs.readFileSync(path, 'utf8'));
+    return parsers.csv.parse(fs.readFileSync(path, 'utf8'));
   },
   readJson: function(path, cb){
     fs.readFile(path, function(err, data){
@@ -22,15 +38,15 @@ var readers = {
     })
   },
   readJsonSync: function(path){
-    return JSON.parse(fs.readFileSync(path));
+    return parsers.JSON.parse(fs.readFileSync(path));
   },
   readTsv: function(path, cb){
     fs.readFile(path, 'utf8', function(err, data){
-      cb(err, dsv.tsv.parse(data));    
+      cb(err, parsers.tsv.parse(data));    
     })
   },
   readTsvSync: function(path){
-    return dsv.tsv.parse(fs.readFileSync(path, 'utf8'));
+    return parsers.tsv.parse(fs.readFileSync(path, 'utf8'));
   },
   readPsv: function(path, cb){
     fs.readFile(path, 'utf8', function(err, data){
@@ -40,13 +56,25 @@ var readers = {
   readPsvSync: function(path){
     return parsers.psv.parse(fs.readFileSync(path, 'utf8'));
   },
-  readDsv: function(path, delimiter, cb){
+  readData: function(path, cb, delimiter){
     fs.readFile(path, 'utf8', function(err, data){
-      cb(err, dsv(delimiter).parse(data));    
+      cb(err, discernParser(path, delimiter).parse(data));    
     })
   },
-  readDsvSync: function(path, delimiter){
-    return dsv(delimiter).parse(fs.readFileSync(path, 'utf8'));
+  readDataSync: function(path, delimiter){
+    return discernParser(path, delimiter).parse(fs.readFileSync(path, 'utf8'));
+  },
+  readDbf: function(path){
+    var dbf_parser = new parsers.Dbf_Parser(path),
+        rows = [];
+    dbf_parser.on('record', function(p) {
+        rows.push(p)
+    });
+    dbf_parser.on('end', function(p) {
+        // console.log(rows)
+    });
+    dbf_parser.parse();
+
   }
 }
 
@@ -59,6 +87,7 @@ module.exports = {
   readTsvSync: readers.readTsvSync,
   readPsv: readers.readPsv,
   readPsvSync: readers.readPsvSync,
-  readDsv: readers.readDsv,
-  readDsvSync: readers.readDsvSync,
+  readData: readers.readData,
+  readDataSync: readers.readDataSync,
+  readDbf: readers.readDbf
 }
