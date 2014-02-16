@@ -50,6 +50,7 @@ helpers.discernFileFormatter = function(file_name){
 }
 
 var readers = {}
+
 readers.readCsv: function(path, cb){
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, parsers.csv.parse(data));    
@@ -58,6 +59,7 @@ readers.readCsv: function(path, cb){
 readers.readCsvSync: function(path){
   return parsers.csv.parse(fs.readFileSync(path, 'utf8'));
 }
+
 readers.readJson: function(path, cb){
   fs.readFile(path, function(err, data){
     cb(err, JSON.parse(data));
@@ -66,6 +68,7 @@ readers.readJson: function(path, cb){
 readers.readJsonSync: function(path){
   return parsers.JSON.parse(fs.readFileSync(path));
 }
+
 readers.readTsv: function(path, cb){
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, parsers.tsv.parse(data));    
@@ -74,6 +77,7 @@ readers.readTsv: function(path, cb){
 readers.readTsvSync: function(path){
   return parsers.tsv.parse(fs.readFileSync(path, 'utf8'));
 }
+
 readers.readPsv: function(path, cb){
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, parsers.psv.parse(data));    
@@ -82,6 +86,8 @@ readers.readPsv: function(path, cb){
 readers.readPsvSync: function(path){
   return parsers.psv.parse(fs.readFileSync(path, 'utf8'));
 }
+
+// Figure out what the format is based on its file name
 readers.readData: function(path, cb, delimiter){
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, discernParser(path, delimiter).parse(data));    
@@ -106,7 +112,7 @@ readers.readDataSync: function(path, delimiter){
 
 var writers = {};
 
-// Given a file path, some json data, convert it to that format and write it
+// Given a file path and json data, convert it to that format and write it
 writers.writeData = function(path, data, cb){
   var fileFormatter = discernFileFormatter(file_path);
   fs.WriteFile(file_path, fileFormatter(data), function(err){
