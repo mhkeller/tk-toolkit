@@ -1,7 +1,7 @@
 var fs          = require('fs'),
-    dsv         = require('dsv'),
-    toDbf       = require('dbf'),
-    fromDbf     = require('node-dbf');
+    dsv         = require('dsv');
+    // toDbf       = require('dbf'),
+    // fromDbf     = require('node-dbf');
 
 var formatters = {
   json: function(file){
@@ -23,7 +23,7 @@ var parsers = {
   csv: dsv.csv,
   tsv: dsv.tsv,
   psv: dsv.dsv('|')
-  Dbf_Parser: require('node-dbf')
+  // Dbf_Parser: require('node-dbf')
 }
 
 var helpers = {};

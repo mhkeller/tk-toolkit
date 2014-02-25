@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/mhkeller/tktk/issues"
   },
-  "homepage": "https://github.com/mhkeller/tktk"
+  "homepage": "https://github.com/mhkeller/tktk",
+  "dependencies": {
+    "dsv": "0.0.3"
+  }
 }
