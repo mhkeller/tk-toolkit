@@ -13,6 +13,32 @@ npm install tktk
 
 Examples TK.
 
+### Current methods
+
+_.readCsv()_
+
+_.readCsvSync()_
+
+_.readJson()_
+
+_.readJsonSync()_
+
+_.readTsv()_
+
+_.readTsvSync()_
+
+_.readPsv()_
+
+_.readPsvSync()_
+
+_.readData()_ # Determine file type from filename
+
+_.readDataSync()_
+
+_.writeData()_ # Determine file type from filename
+
+_.writeDataSync()_
+
 # What's the name mean?
 
 In journalism, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
