@@ -13,7 +13,7 @@ npm install tktk
 
 Examples TK.
 
-### Current methods
+### Current functions
 
 _.readCsv()_
 
@@ -41,10 +41,10 @@ _.writeDataSync()_
 
 # What's the name mean?
 
-In journalism, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
+In newsrooms, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
 
 ````
-Mr. Gerald held three titles during his time at he compnay: TK EXACT TITLES.
+Mr. Gerald held three titles during his time at the company: TK EXACT TITLES.
 ````
 
 Depending on whom you ask, it either stands for `TO COME` if you like your acronyms phonetic or `TO KNOW` if you like them lexical.
