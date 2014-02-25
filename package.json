@@ -1,6 +1,6 @@
 {
   "name": "tktk",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "The TK toolkit. Utilities for dealing with data in Node.js.",
   "main": "src/tktk.js",
   "scripts": {
