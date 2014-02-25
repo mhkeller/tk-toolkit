@@ -13,7 +13,7 @@ npm install tktk
 
 Examples TK.
 
-### Current methods
+### Current functions
 
 _.readCsv()_
 
