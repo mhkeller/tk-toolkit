@@ -1,14 +1,14 @@
 {
-  "name": "dtk",
+  "name": "tktk",
   "version": "0.1.0",
-  "description": "Data toolkit. Utilities for dealing with data in Node.js.",
-  "main": "src/dtk.js",
+  "description": "The TK toolkit. Utilities for dealing with data in Node.js.",
+  "main": "src/tktk.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mhkeller/dtk.git"
+    "url": "https://github.com/mhkeller/tktk.git"
   },
   "keywords": [
     "node",
@@ -21,7 +21,7 @@
   "author": "Michael Keller",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mhkeller/dtk/issues"
+    "url": "https://github.com/mhkeller/tktk/issues"
   },
-  "homepage": "https://github.com/mhkeller/dtk"
+  "homepage": "https://github.com/mhkeller/tktk"
 }

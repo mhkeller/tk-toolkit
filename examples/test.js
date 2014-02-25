@@ -1,3 +1,3 @@
-var dtk = require('../src/dtk.js');
+var tk = require('../src/tktkt.js');
 
-var dbf = dtk.readDbf('data/states_21basic/states.dbf')
+// var dbf = tk.readDbf('data/states_21basic/states.dbf')
