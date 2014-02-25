@@ -1,5 +1,5 @@
 The TK Toolkit
-====
+==============
 
 A work-in-progress collection of utilities to help with reading, transforming and writing data. 
 
@@ -12,6 +12,32 @@ npm install tktk
 # Usage
 
 Examples TK.
+
+### Current methods
+
+_.readCsv()_
+
+_.readCsvSync()_
+
+_.readJson()_
+
+_.readJsonSync()_
+
+_.readTsv()_
+
+_.readTsvSync()_
+
+_.readPsv()_
+
+_.readPsvSync()_
+
+_.readData()_ # Determine file type from filename
+
+_.readDataSync()_
+
+_.writeData()_ # Determine file type from filename
+
+_.writeDataSync()_
 
 # What's the name mean?
 
