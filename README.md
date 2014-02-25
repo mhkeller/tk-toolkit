@@ -52,3 +52,11 @@ Depending on whom you ask, it either stands for `TO COME` if you like your acron
 ### So what's that have to do with this?
 
 Since this library is a work in progress, it's largely `TO COME`, but you use it `TO KNOW` things, and since it's a collection of utilities, you could say it's a toolkit of toolkits: The (T)ool(K)it Toolkit.
+
+# TODOs
+
+* Add [`joiner`](http://github.com/mhkeller/joiner) module
+* Add [`tablespoon`](http://github.com/ajam/tablespoon) module
+* Read and write dbfs
+* Read dbf from shapefile
+* Convenience fn for joining data to shapefile
