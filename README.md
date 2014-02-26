@@ -83,6 +83,37 @@ __.writeDataSync(filepath, data)__
 
 Syncronous version of `.writeData`
 
+#### Helpers
+
+__.discernFormat(filepath)__
+
+Given a `filepath` return its file extension. Used internally by `.discernPaser` and `.discernFileFormatter`.
+
+E.g. `tk.discernFormat('path/to/data.csv')` returns `'csv'`
+
+__.discernParser(filepath, [delimiter])__
+
+Given a `filepath`, optionally a delimiter, return a parser that can read that file as json. Used internally by `.readData` and `.readDataSync`.
+
+E.g. 
+
+````
+var csvParser = tk.discernParser('path/to/data.csv');
+
+var json = parser('path/to/data.csv');
+````
+
+__.discernFileFormatter(filepath)__
+
+Returns a formatter that will format json data to file type specified by the extension in `filepath`. Used internally by `.writeData` and `.writeDataSync`.
+
+E.g.
+
+````
+var formatter = tk.discernFileFormatter('path/to/data.tsv');
+var csv = formatter(json);
+````
+
 # What's the name mean?
 
 In news writing, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
