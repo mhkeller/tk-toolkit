@@ -15,33 +15,77 @@ Examples TK.
 
 ### Current functions
 
-_.readCsv()_
+#### Reading data
 
-_.readCsvSync()_
+__.readData(filepath, [delimiter], callback)__
 
-_.readJson()_
+Reads in a data file given a path ending in the file format. 
 
-_.readJsonSync()_
+Supported formats:
 
-_.readTsv()_
+* `.json`
+* `.csv` Comma-separated
+* `.tsv` Tab-separated
+* `.psv` Pipe-separated
 
-_.readTsvSync()_
+Pass in a delimiter as the second argument to read in another format.
 
-_.readPsv()_
+__.readDataSync(filepath, [delimiter])__
 
-_.readPsvSync()_
+Syncronous version of `.readData()`
 
-_.readData()_ # Determine file type from filename
+__.readJson(filepath, callback)__
 
-_.readDataSync()_
+Read in a json file.
 
-_.writeData()_ # Determine file type from filename
+__.readJsonSync(filepath)__
 
-_.writeDataSync()_
+Read json syncronously.
+
+__.readCsv(filepath, callback)__
+
+Read in a comma-separated value file.
+
+__.readCsvSync(filepath)__
+
+Read csv syncronously.
+
+__.readTsv(filepath, callback)__
+
+Read in a tab-separated value file.
+
+__.readTsvSync(filepath)__
+
+Read tsv syncronously.
+
+__.readPsv(filepath, callback)__
+
+Read in a pipe-separated value file.
+
+__.readPsvSync(filepath)__
+
+Read psv syncronously.
+
+#### Writing data
+
+__.writeData(filepath, data, callback)__
+
+Write out the data object, inferring the file format from the file ending specified in `filepath`.
+
+Supported formats:
+
+* `.json`
+* `.csv` Comma-separated
+* `.tsv` Tab-separated
+* `.psv` Pipe-separated
+
+__.writeDataSync(filepath, data)__
+
+Syncronous version of `.writeData`
 
 # What's the name mean?
 
-In newsrooms, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
+In news writing, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
 
 ````
 Mr. Gerald held three titles during his time at the company: TK EXACT TITLES.

@@ -3,6 +3,10 @@ var fs          = require('fs'),
     // toDbf       = require('dbf'),
     // fromDbf     = require('node-dbf');
 
+function maybeCallback(cb) {
+  return util.isFunction(cb) ? cb : rethrow();
+}
+
 var formatters = {
   json: function(file){
     return JSON.stringify(file)
@@ -51,6 +55,17 @@ helpers.discernFileFormatter = function(file_name){
 
 var readers = {}
 
+// Figure out what the format is based on its file name
+readers.readData: function(path, delimiter, cb_){
+  var cb = maybeCallback(arguments[arguments.length - 1]);
+  fs.readFile(path, 'utf8', function(err, data){
+    cb(err, discernParser(path, delimiter).parse(data));    
+  })
+}
+readers.readDataSync: function(path, delimiter){
+  return discernParser(path, delimiter).parse(fs.readFileSync(path, 'utf8'));
+}
+
 readers.readCsv: function(path, cb){
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, parsers.csv.parse(data));    
@@ -87,15 +102,6 @@ readers.readPsvSync: function(path){
   return parsers.psv.parse(fs.readFileSync(path, 'utf8'));
 }
 
-// Figure out what the format is based on its file name
-readers.readData: function(path, cb, delimiter){
-  fs.readFile(path, 'utf8', function(err, data){
-    cb(err, discernParser(path, delimiter).parse(data));    
-  })
-}
-readers.readDataSync: function(path, delimiter){
-  return discernParser(path, delimiter).parse(fs.readFileSync(path, 'utf8'));
-}
 // readDbf: function(path){
   //   var dbf_parser = new parsers.Dbf_Parser(path),
   //       rows = [];
@@ -125,16 +131,24 @@ writers.writeDataSync = function(path, data){
 }
 
 module.exports = {
-  readCsv: readers.readCsv,
-  readCsvSync: readers.readCsvSync,
-  readJson: readers.readJson,
-  readJsonSync: readers.readJsonSync,
-  readTsv: readers.readTsv,
-  readTsvSync: readers.readTsvSync,
-  readPsv: readers.readPsv,
-  readPsvSync: readers.readPsvSync,
-  readData: readers.readData,
-  readDataSync: readers.readDataSync,
-  writeData: writers.writeData,
-  writeDataSync: writers.writeDataSync,
+
+  readData:             readers.readData,
+  readDataSync:         readers.readDataSync,
+  readCsv:              readers.readCsv,
+  readCsvSync:          readers.readCsvSync,
+  readJson:             readers.readJson,
+  readJsonSync:         readers.readJsonSync,
+  readTsv:              readers.readTsv,
+  readTsvSync:          readers.readTsvSync,
+  readPsv:              readers.readPsv,
+  readPsvSync:          readers.readPsvSync,
+
+  writeData:            writers.writeData,
+  writeDataSync:        writers.writeDataSync,
+
+  discernFormat:        helpers.discernFormat,
+  discernParser:        helpers.discernParser,
+  discernFileFormatter: helpers.discernFileFormatter,
+
+
 }
