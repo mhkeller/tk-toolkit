@@ -91,11 +91,11 @@ In news writing, `TK` is used as a placeholder for facts or sections you don't h
 Mr. Gerald held three titles during his time at the company: TK EXACT TITLES.
 ````
 
-Depending on whom you ask, it either stands for `TO COME` if you like your acronyms phonetic or `TO KNOW` if you like them lexical.
+Depending on whom you ask, it either stands for `TO COME` if you like your acronyms phonetic or `TO KNOW` if you don't mind the silent 'K'.
 
-### So what's that have to do with this?
+### What's that have to do with this?
 
-Since this library is a work in progress, it's largely `TO COME`, but you use it `TO KNOW` things, and since it's a collection of utilities, you could say it's a toolkit of toolkits: The (T)ool(K)it Toolkit.
+This library is a work in progress so it's largely `TO COME`. You could also say you can use it `TO KNOW` things since it's a collection of data utilities. Or you could say it's a (t)ool(k)it of toolkits: a TK TK.
 
 # TODOs
 
