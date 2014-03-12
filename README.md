@@ -151,7 +151,7 @@ Does the same thing as __.left__ but navigates to the `features` array and passe
 
 ## Database operations
 
-Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out the [full documentation wiki](https://github.com/ajam/tablespoon/wiki/Node.js).
+Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out [the wiki](https://github.com/ajam/tablespoon/wiki) for the full documention.
 
 ## Statistics
 
@@ -193,14 +193,14 @@ var csv = formatter(json);
 In news writing, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
 
 ````
-Mr. Gerald held three titles during his time at the company: TK EXACT TITLES.
+Mrs. Robinson arrived at the office at TK EXACT TIME to speak with the board members.
 ````
 
 Depending on whom you ask, it either stands for `TO COME` if you like your acronyms phonetic or `TO KNOW` if you don't mind the silent 'K'.
 
 ### What's that have to do with this?
 
-This library is a work in progress so it's largely `TO COME`. You could also say you can use it `TO KNOW` things since it's a collection of data utilities. Or you could say it's a (t)ool(k)it of toolkits: a TK TK.
+This library is a work in progress so it's largely `TO COME`. You could also say you can use it `TO KNOW` things since it's a collection of data utilities. Or you could say it's a (T)ool(K)it of toolkits: a TK TK.
 
 # TODOs
 
