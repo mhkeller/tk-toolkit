@@ -54,7 +54,7 @@ Examples TK.
 
 ### .readData(filepath, [delimiter], callback)
 
-Reads in a data file given a path ending in the file format. 
+Reads in a data file given a path ending in the file format. Callback structure is `function(err, data)`.
 
 Supported formats:
 
@@ -71,7 +71,7 @@ Syncronous version of `.readData()`
 
 ### .readJson(filepath, callback)
 
-Read in a json file.
+Read in a json file. Callback structure is `function(err, data)`.
 
 ### .readJsonSync(filepath)
 
@@ -79,7 +79,7 @@ Read json syncronously.
 
 ### .readCsv(filepath, callback)
 
-Read in a comma-separated value file.
+Read in a comma-separated value file. Callback structure is `function(err, data)`.
 
 ### .readCsvSync(filepath)
 
@@ -87,7 +87,7 @@ Read csv syncronously.
 
 ### .readTsv(filepath, callback)
 
-Read in a tab-separated value file.
+Read in a tab-separated value file. Callback structure is `function(err, data)`.
 
 ### .readTsvSync(filepath)
 
@@ -95,7 +95,7 @@ Read tsv syncronously.
 
 ### .readPsv(filepath, callback)
 
-Read in a pipe-separated value file.
+Read in a pipe-separated value file. Callback structure is `function(err, data)`.
 
 ### .readPsvSync(filepath)
 
@@ -105,7 +105,7 @@ Read psv syncronously.
 
 ### .writeData(filepath, data, callback)
 
-Write out the data object, inferring the file format from the file ending specified in `filepath`.
+Write out the data object, inferring the file format from the file ending specified in `filepath`. Callback structure is `function(err, data)`.
 
 Supported formats:
 
@@ -116,7 +116,7 @@ Supported formats:
 
 ### .writeDataSync(filepath, data)
 
-Syncronous version of `.writeData`
+Syncronous version of `.writeData`. Callback structure is `function(err)`.
 
 ## Joining data
 
