@@ -155,11 +155,19 @@ Does the same thing as __.left__ but navigates to the `features` array and passe
 
 ## Database operations
 
-Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out [the wiki](https://github.com/ajam/tablespoon/wiki) for the full documention.
+Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out [the wiki](https://github.com/ajam/tablespoon/wiki) for the full documention. All `tablespoon` methods are accessible under the `tk.db` namespace, e.g.
+
+````
+tk.db.createTableSync(data);
+````
 
 ## Statistics
 
-Uses the [`simple-statistics`](https://github.com/tmcw/simple-statistics) module.
+Uses the [`simple-statistics`](https://github.com/tmcw/simple-statistics) module. All `simple-statistics` methods are accessible under the `tk.stats` namespace, e.g.
+
+````
+var mean = tk.stats.mean([1, 4, 19, 55]);
+````
 
 ## Helpers
 
