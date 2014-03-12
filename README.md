@@ -209,5 +209,4 @@ This library is a work in progress so it's largely `TO COME`. You could also say
 # TODOs
 
 * Read and write dbfs
-* Read dbf from shapefile
 * Convenience fn for joining data to shapefile
