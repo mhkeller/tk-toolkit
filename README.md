@@ -54,6 +54,8 @@ Examples TK.
 
 ## Reading data
 
+Uses the [`indian-ocean`](https://github.com/mhkeller/indian-ocean) module. Reads a variety of data file formats in as json.
+
 ### .readData(filepath, [delimiter], callback)
 
 Reads in a data file given a path ending in the file format. Callback structure is `function(err, data)`.
@@ -104,6 +106,8 @@ Read in a pipe-separated value file. Callback structure is `function(err, data)`
 Read psv syncronously.
 
 ## Writing data
+
+Uses the [`indian-ocean`](https://github.com/mhkeller/indian-ocean) module. Writes json objects to the specified format.
 
 ### .writeData(filepath, data, callback)
 
