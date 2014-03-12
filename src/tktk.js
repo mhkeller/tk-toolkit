@@ -6,7 +6,7 @@ var fs          = require('fs'),
     // toDbf       = require('dbf'),
     // fromDbf     = require('node-dbf');
 
-function maybeCallback(cb) {
+function callMeMaybe(cb) {
   return util.isFunction(cb) ? cb : rethrow();
 }
 
@@ -60,7 +60,7 @@ var readers = {}
 
 // Figure out what the format is based on its file name
 readers.readData: function(path, delimiter, cb_){
-  var cb = maybeCallback(arguments[arguments.length - 1]);
+  var cb = callMeMaybe(arguments[arguments.length - 1]);
   fs.readFile(path, 'utf8', function(err, data){
     cb(err, discernParser(path, delimiter).parse(data));    
   })
