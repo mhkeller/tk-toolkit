@@ -15,39 +15,40 @@ Examples TK.
 
 # Current functions
 
-* Reading data
-    * .readDataSync(filepath, [delimiter])
-    * .readJson(filepath, callback)
-    * .readJsonSync(filepath)
-    * .readCsv(filepath, callback)
-    * .readCsvSync(filepath)
-    * .readTsv(filepath, callback)
-    * .readTsvSync(filepath)
-    * .readPsv(filepath, callback)
-* Writing data
-    * .writeData(filepath, data, callback)
-    * .writeDataSync(filepath, data)
-* Joining data
+* [Reading data](#reading-data)
+    * [.readDataSync(filepath, [delimiter])](#readdatafilepath-delimiter-callback)
+    * [.readJson(filepath, callback)](#readjsonfilepath-callback)
+    * [.readJsonSync(filepath)](#readjsonsyncfilepath)
+    * [.readCsv(filepath, callback)](#readcsvfilepath-callback)
+    * [.readCsvSync(filepath)](#readcsvsyncfilepath)
+    * [.readTsv(filepath, callback)](#readtsvfilepath-callback)
+    * [.readTsvSync(filepath)](#readtsvsyncfilepath)
+    * [.readPsv(filepath, callback)](#readpsvfilepath-callback)
+    * [.readPsvSync(filepath)](#readpsvsyncfilepath)
+* [Writing data](#writing-data)
+    * [.writeData(filepath, data, callback)](writedatafilepath-data-callback)
+    * [.writeDataSync(filepath, data)](writedatasyncfilepath-data)
+* [Joining data](#joining-data)
     * .join.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
     * .join.geoJson(leftData, leftDataKey, rightData, rightDataKey)
-* Creating a database
+* [Creating a database](#database-operations)
     * .db.sqlite()
     * .db.pgsql(dbConnectionString)
     * .db.createTable(dataobject, [tablename], [tableschema], [permanent])
     * .db.createTableCommands(dataobject, [tablename], [tableschema], [permanent], [skipinsert])
     * .db.createEmptyTable(dataobject, [tablename], [tableschema], [permanent])
     * .db.insert(dataobject, [tablename])
-* Querying a database
+* [Querying a database](#database-operations)
     * .db.query(queryString, function)
     * .db.query.each(queryString, function)
     * .db.queries(list, function)
     * .db.queries.each(list, function)
-* Statistics
+* [Statistics](#statistics)
     * .db.stats
-* Helpers
-    * .discernFormat(filepath)
-    * .discernParser(filepath, [delimiter])
-    * .discernFileFormatter(filepath)
+* [Helpers](#helpers)
+    * [.discernFormat(filepath)](#discernformatfilepath)
+    * [.discernParser(filepath, [delimiter]](#discernparserfilepath-delimiter)
+    * [.discernFileFormatter(filepath)](#discernfileformatterfilepath)
 
 
 ## Reading data
