@@ -16,7 +16,8 @@ Examples TK.
 # Current functions
 
 * [Reading data](#reading-data)
-    * [.readDataSync(filepath, [delimiter])](#readdatafilepath-delimiter-callback)
+    * [.readData(filepath, [delimiter], callback)](#readdatafilepath-delimiter-callback)
+    * [.readDataSync(filepath, [delimiter])](#readdatasyncfilepath-delimiter)
     * [.readJson(filepath, callback)](#readjsonfilepath-callback)
     * [.readJsonSync(filepath)](#readjsonsyncfilepath)
     * [.readCsv(filepath, callback)](#readcsvfilepath-callback)
@@ -26,8 +27,8 @@ Examples TK.
     * [.readPsv(filepath, callback)](#readpsvfilepath-callback)
     * [.readPsvSync(filepath)](#readpsvsyncfilepath)
 * [Writing data](#writing-data)
-    * [.writeData(filepath, data, callback)](writedatafilepath-data-callback)
-    * [.writeDataSync(filepath, data)](writedatasyncfilepath-data)
+    * [.writeData(filepath, data, callback)](#writedatafilepath-data-callback)
+    * [.writeDataSync(filepath, data)](#writedatasyncfilepath-data)
 * [Joining data](#joining-data)
     * .join.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
     * .join.geoJson(leftData, leftDataKey, rightData, rightDataKey)
