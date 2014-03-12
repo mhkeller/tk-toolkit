@@ -1,5 +1,8 @@
 var fs          = require('fs'),
-    dsv         = require('dsv');
+    dsv         = require('dsv'),
+    joiner      = require('joiner'),
+    ts          = require('tablespoon'),
+    ss          = require('simple-statistics');
     // toDbf       = require('dbf'),
     // fromDbf     = require('node-dbf');
 
@@ -149,6 +152,12 @@ module.exports = {
   discernFormat:        helpers.discernFormat,
   discernParser:        helpers.discernParser,
   discernFileFormatter: helpers.discernFileFormatter,
+
+  join:                 joiner,
+
+  db:                   ts,
+
+  stats:                ss
 
 
 }

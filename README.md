@@ -13,9 +13,44 @@ npm install tktk
 
 Examples TK.
 
-### Current functions
+## Current functions
 
-#### Reading data
+* Reading data
+    * .readDataSync(filepath, [delimiter])
+    * .readJson(filepath, callback)
+    * .readJsonSync(filepath)
+    * .readCsv(filepath, callback)
+    * .readCsvSync(filepath)
+    * .readTsv(filepath, callback)
+    * .readTsvSync(filepath)
+    * .readPsv(filepath, callback)
+* Writing data
+    * .writeData(filepath, data, callback)
+    * .writeDataSync(filepath, data)
+* Joining data
+    * .join.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
+    * .join.geoJson(leftData, leftDataKey, rightData, rightDataKey)
+* Creating a database
+    * .db.sqlite()
+    * .db.pgsql(dbConnectionString)
+    * .db.createTable(dataobject, [tablename], [tableschema], [permanent])
+    * .db.createTableCommands(dataobject, [tablename], [tableschema], [permanent], [skipinsert])
+    * .db.createEmptyTable(dataobject, [tablename], [tableschema], [permanent])
+    * .db.insert(dataobject, [tablename])
+* Querying a database
+    * .db.query(queryString, function)
+    * .db.query.each(queryString, function)
+    * .db.queries(list, function)
+    * .db.queries.each(list, function)
+* Statistics
+    * .db.stats
+* Helpers
+    * .discernFormat(filepath)
+    * .discernParser(filepath, [delimiter])
+    * .discernFileFormatter(filepath)
+
+
+### Reading data
 
 __.readData(filepath, [delimiter], callback)__
 
@@ -30,45 +65,45 @@ Supported formats:
 
 Pass in a delimiter as the second argument to read in another format.
 
-__.readDataSync(filepath, [delimiter])__
+##### .readDataSync(filepath, [delimiter])
 
 Syncronous version of `.readData()`
 
-__.readJson(filepath, callback)__
+##### .readJson(filepath, callback)
 
 Read in a json file.
 
-__.readJsonSync(filepath)__
+##### .readJsonSync(filepath)
 
 Read json syncronously.
 
-__.readCsv(filepath, callback)__
+##### .readCsv(filepath, callback)
 
 Read in a comma-separated value file.
 
-__.readCsvSync(filepath)__
+##### .readCsvSync(filepath)
 
 Read csv syncronously.
 
-__.readTsv(filepath, callback)__
+##### .readTsv(filepath, callback)
 
 Read in a tab-separated value file.
 
-__.readTsvSync(filepath)__
+##### .readTsvSync(filepath)
 
 Read tsv syncronously.
 
-__.readPsv(filepath, callback)__
+##### .readPsv(filepath, callback)
 
 Read in a pipe-separated value file.
 
-__.readPsvSync(filepath)__
+##### .readPsvSync(filepath)
 
 Read psv syncronously.
 
 #### Writing data
 
-__.writeData(filepath, data, callback)__
+##### .writeData(filepath, data, callback)
 
 Write out the data object, inferring the file format from the file ending specified in `filepath`.
 
@@ -79,19 +114,56 @@ Supported formats:
 * `.tsv` Tab-separated
 * `.psv` Pipe-separated
 
-__.writeDataSync(filepath, data)__
+##### .writeDataSync(filepath, data)
 
 Syncronous version of `.writeData`
 
-#### Helpers
+### Joining data
 
-__.discernFormat(filepath)__
+Uses the [`joiner`](http://github.com/mhkeller/joiner) module. All methods return an object with the following structure:
+
+````
+data: [data object],
+report: {
+	diff: {
+		a: [data in A],
+		b: [data in A],
+		a_and_b: [data in A and B],
+		a_not_in_b: [data in A not in B],
+		b_not_in_a: [data in B not in A]
+	}:
+	prose: {
+		summary: [summary description of join result, number of matches in A and B, A not in B, B not in A.]
+		full:    [full list of which rows were joined in each of the above categories]
+	}
+}
+````
+
+##### _.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
+
+Perform a left join on the two array-of-object json datasets. Optionally, you can pass in a key name in case the left data's attribute dictionary is nested, such as in GeoJson where the attributes are under a `properties` object.
+
+##### .geoJson(leftData, leftDataKey, rightData, rightDataKey)
+
+Does the same thing as __.left__ but navigates to the `features` array and passes in `properties` as the nested key name.
+
+### Database operations
+
+Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out the [full documentation wiki](https://github.com/ajam/tablespoon/wiki/Node.js).
+
+### Statistics
+
+Uses the [`simple-statistics`](https://github.com/tmcw/simple-statistics) module.
+
+### Helpers
+
+##### .discernFormat(filepath)
 
 Given a `filepath` return its file extension. Used internally by `.discernPaser` and `.discernFileFormatter`.
 
 E.g. `tk.discernFormat('path/to/data.csv')` returns `'csv'`
 
-__.discernParser(filepath, [delimiter])__
+##### .discernParser(filepath, [delimiter])
 
 Given a `filepath`, optionally a delimiter, return a parser that can read that file as json. Used internally by `.readData` and `.readDataSync`.
 
@@ -103,7 +175,7 @@ var csvParser = tk.discernParser('path/to/data.csv');
 var json = parser('path/to/data.csv');
 ````
 
-__.discernFileFormatter(filepath)__
+##### .discernFileFormatter(filepath)
 
 Returns a formatter that will format json data to file type specified by the extension in `filepath`. Used internally by `.writeData` and `.writeDataSync`.
 
@@ -130,8 +202,6 @@ This library is a work in progress so it's largely `TO COME`. You could also say
 
 # TODOs
 
-* Add [`joiner`](http://github.com/mhkeller/joiner) module
-* Add [`tablespoon`](http://github.com/ajam/tablespoon) module
 * Read and write dbfs
 * Read dbf from shapefile
 * Convenience fn for joining data to shapefile
