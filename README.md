@@ -13,7 +13,7 @@ npm install tktk
 
 Examples TK.
 
-## Current functions
+# Current functions
 
 * Reading data
     * .readDataSync(filepath, [delimiter])
@@ -50,9 +50,9 @@ Examples TK.
     * .discernFileFormatter(filepath)
 
 
-### Reading data
+## Reading data
 
-__.readData(filepath, [delimiter], callback)__
+### .readData(filepath, [delimiter], callback)
 
 Reads in a data file given a path ending in the file format. 
 
@@ -65,45 +65,45 @@ Supported formats:
 
 Pass in a delimiter as the second argument to read in another format.
 
-##### .readDataSync(filepath, [delimiter])
+### .readDataSync(filepath, [delimiter])
 
 Syncronous version of `.readData()`
 
-##### .readJson(filepath, callback)
+### .readJson(filepath, callback)
 
 Read in a json file.
 
-##### .readJsonSync(filepath)
+### .readJsonSync(filepath)
 
 Read json syncronously.
 
-##### .readCsv(filepath, callback)
+### .readCsv(filepath, callback)
 
 Read in a comma-separated value file.
 
-##### .readCsvSync(filepath)
+### .readCsvSync(filepath)
 
 Read csv syncronously.
 
-##### .readTsv(filepath, callback)
+### .readTsv(filepath, callback)
 
 Read in a tab-separated value file.
 
-##### .readTsvSync(filepath)
+### .readTsvSync(filepath)
 
 Read tsv syncronously.
 
-##### .readPsv(filepath, callback)
+### .readPsv(filepath, callback)
 
 Read in a pipe-separated value file.
 
-##### .readPsvSync(filepath)
+### .readPsvSync(filepath)
 
 Read psv syncronously.
 
-#### Writing data
+## Writing data
 
-##### .writeData(filepath, data, callback)
+### .writeData(filepath, data, callback)
 
 Write out the data object, inferring the file format from the file ending specified in `filepath`.
 
@@ -114,11 +114,11 @@ Supported formats:
 * `.tsv` Tab-separated
 * `.psv` Pipe-separated
 
-##### .writeDataSync(filepath, data)
+### .writeDataSync(filepath, data)
 
 Syncronous version of `.writeData`
 
-### Joining data
+## Joining data
 
 Uses the [`joiner`](http://github.com/mhkeller/joiner) module. All methods return an object with the following structure:
 
@@ -139,31 +139,31 @@ report: {
 }
 ````
 
-##### _.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
+### _.left(leftData, leftDataKey, rightData, rightDataKey, [nestedKeyName])
 
 Perform a left join on the two array-of-object json datasets. Optionally, you can pass in a key name in case the left data's attribute dictionary is nested, such as in GeoJson where the attributes are under a `properties` object.
 
-##### .geoJson(leftData, leftDataKey, rightData, rightDataKey)
+### .geoJson(leftData, leftDataKey, rightData, rightDataKey)
 
 Does the same thing as __.left__ but navigates to the `features` array and passes in `properties` as the nested key name.
 
-### Database operations
+## Database operations
 
 Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out the [full documentation wiki](https://github.com/ajam/tablespoon/wiki/Node.js).
 
-### Statistics
+## Statistics
 
 Uses the [`simple-statistics`](https://github.com/tmcw/simple-statistics) module.
 
-### Helpers
+## Helpers
 
-##### .discernFormat(filepath)
+### .discernFormat(filepath)
 
 Given a `filepath` return its file extension. Used internally by `.discernPaser` and `.discernFileFormatter`.
 
 E.g. `tk.discernFormat('path/to/data.csv')` returns `'csv'`
 
-##### .discernParser(filepath, [delimiter])
+### .discernParser(filepath, [delimiter])
 
 Given a `filepath`, optionally a delimiter, return a parser that can read that file as json. Used internally by `.readData` and `.readDataSync`.
 
@@ -175,7 +175,7 @@ var csvParser = tk.discernParser('path/to/data.csv');
 var json = parser('path/to/data.csv');
 ````
 
-##### .discernFileFormatter(filepath)
+### .discernFileFormatter(filepath)
 
 Returns a formatter that will format json data to file type specified by the extension in `filepath`. Used internally by `.writeData` and `.writeDataSync`.
 
