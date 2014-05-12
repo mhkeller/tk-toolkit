@@ -1,6 +1,6 @@
 {
   "name": "tktk",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "The TK toolkit. Utilities for dealing with data in Node.js.",
   "main": "src/tktk.js",
   "scripts": {
@@ -29,6 +29,6 @@
     "joiner": "~0.3.4",
     "tablespoon": "~0.1.6",
     "simple-statistics": "~0.7.0",
-    "indian-ocean": "0.0.1"
+    "indian-ocean": "0.0.10"
   }
 }
