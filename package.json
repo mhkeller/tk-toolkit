@@ -1,6 +1,6 @@
 {
   "name": "tktk",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "The TK toolkit. Utilities for dealing with data in Node.js.",
   "main": "src/tktk.js",
   "scripts": {
@@ -26,9 +26,9 @@
   "homepage": "https://github.com/mhkeller/tktk",
   "readmeFilename": "README.md",
   "dependencies": {
-    "joiner": "~0.3.4",
-    "tablespoon": "~0.1.6",
-    "simple-statistics": "~0.7.0",
-    "indian-ocean": "0.0.10"
+    "joiner": ">=0.3.4",
+    "tablespoon": ">=0.1.7",
+    "simple-statistics": ">=0.7.0",
+    "indian-ocean": ">=0.0.10"
   }
 }
