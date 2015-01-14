@@ -128,7 +128,7 @@ Syncronous version of `.writeData`. Callback structure is `function(err)`.
 
 Uses the [`joiner`](http://github.com/mhkeller/joiner) module. All methods return an object with the following structure:
 
-````
+````js
 data: [data object],
 report: {
 	diff: {
@@ -157,7 +157,7 @@ Does the same thing as __.left__ but navigates to the `features` array and passe
 
 Uses the [`tablespoon`](https://github.com/ajam/tablespoon) module. Check out [the wiki](https://github.com/ajam/tablespoon/wiki) for the full documention. All `tablespoon` methods are accessible under the `tk.db` namespace, e.g.
 
-````
+````js
 tk.db.createTableSync(data);
 ````
 
@@ -165,7 +165,7 @@ tk.db.createTableSync(data);
 
 Uses the [`simple-statistics`](https://github.com/tmcw/simple-statistics) module. All `simple-statistics` methods are accessible under the `tk.stats` namespace, e.g.
 
-````
+````js
 var mean = tk.stats.mean([1, 4, 19, 55]);
 ````
 
@@ -183,7 +183,7 @@ Given a `filepath`, optionally a delimiter, return a parser that can read that f
 
 E.g. 
 
-````
+````js
 var csvParser = tk.discernParser('path/to/data.csv');
 
 var json = parser('path/to/data.csv');
@@ -195,7 +195,7 @@ Returns a formatter that will format json data to file type specified by the ext
 
 E.g.
 
-````
+````js
 var formatter = tk.discernFileFormatter('path/to/data.tsv');
 var csv = formatter(json);
 ````
@@ -205,7 +205,7 @@ var csv = formatter(json);
 In news writing, `TK` is used as a placeholder for facts or sections you don't have yet. For example:
 
 ````
-Mrs. Robinson arrived at the office at TK EXACT TIME to speak with the board members.
+Mrs. Williamson arrived at the office at TK EXACT TIME to speak with the board members.
 ````
 
 Depending on whom you ask, it either stands for `TO COME` if you like your acronyms phonetic or `TO KNOW` if you don't mind the silent 'K'.
@@ -213,8 +213,3 @@ Depending on whom you ask, it either stands for `TO COME` if you like your acron
 ### What's that have to do with this?
 
 This library is a work in progress so it's largely `TO COME`. You could also say you can use it `TO KNOW` things since it's a collection of data utilities. Or you could say it's a (T)ool(K)it of toolkits: a TK TK.
-
-# TODOs
-
-* Read and write dbfs
-* Convenience fn for joining data to shapefile
