@@ -29,6 +29,6 @@
     "joiner": ">=0.3.4",
     "tablespoon": ">=0.1.7",
     "simple-statistics": ">=0.7.0",
-    "indian-ocean": ">=0.0.10"
+    "indian-ocean": ">=0.1.0"
   }
 }
