@@ -50,6 +50,7 @@ Examples TK.
     * [.discernFormat(filepath)](#discernformatfilepath)
     * [.discernParser(filepath, [delimiter]](#discernparserfilepath-delimiter)
     * [.discernFileFormatter(filepath)](#discernfileformatterfilepath)
+    * [fs](#fs)
 
 
 ## Reading data
@@ -199,6 +200,11 @@ E.g.
 var formatter = tk.discernFileFormatter('path/to/data.tsv');
 var csv = formatter(json);
 ````
+
+### fs
+
+Exposes the native [File System](http://nodejs.org/api/fs.html) module for convenience.
+
 
 # What's the name mean?
 
