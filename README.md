@@ -72,9 +72,11 @@ Supported formats:
 
 Pass in a delimiter as the second argument to read in another format.
 
+*Note: Does not currently support .dbf files.*
+
 ### .readDataSync(filepath, [delimiter])
 
-Syncronous version of `.readData()`
+Syncronous version of `.readData()`.
 
 ### .readJson(filepath, callback)
 
@@ -126,6 +128,8 @@ Supported formats:
 * `.csv` Comma-separated
 * `.tsv` Tab-separated
 * `.psv` Pipe-separated
+
+*Note: Does not currently support .dbf files.*
 
 ### .writeDataSync(filepath, data)
 
