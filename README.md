@@ -65,7 +65,7 @@ Reads in a data file given a path ending in the file format. Callback structure 
 
 Supported formats:
 
-* `.json`
+* `.json` Array of objects
 * `.csv` Comma-separated
 * `.tsv` Tab-separated
 * `.psv` Pipe-separated
@@ -124,7 +124,7 @@ Write out the data object, inferring the file format from the file ending specif
 
 Supported formats:
 
-* `.json`
+* `.json` Array of objects
 * `.csv` Comma-separated
 * `.tsv` Tab-separated
 * `.psv` Pipe-separated
