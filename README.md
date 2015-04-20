@@ -1,17 +1,18 @@
 The TK Toolkit
 ==============
 
-A work-in-progress collection of utilities to help with reading, transforming and writing data. 
+A work-in-progress collection of utilities to help with reading, transforming and writing data. It's a collection of the following libraries:
+
+* [Indian Ocean](http://github.com/indian-ocean) for reading and writing data files (json, csv or a variety of delimited-value files) — converts spreadsheet-like data to json.
+* [Tablespoon](http://github.com/ajam/tablespoon) for creating sqlite and postgresql databases from json objects.
+* [Joiner](http://github.com/mhkeller/joiner) for doing left joins on two json or geojson objects.
+* [Simple statistics](https://github.com/tmcw/simple-statistics) for performing simple stats operations like average, mean and some less-simple things like variance, jenks clustering, t-tests and bayesian classification.
 
 # Installation
 
 ````
 npm install tktk
 ````
-
-# Usage
-
-Examples TK.
 
 # Current functions
 
