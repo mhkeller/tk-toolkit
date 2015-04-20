@@ -48,7 +48,7 @@ npm install tktk
     * .db.queries(list, function)
     * .db.queries.each(list, function)
 * [Statistics](#statistics)
-    * .db.stats
+    * .stats
 * [Helpers](#helpers)
     * [.discernFormat(filepath)](#discernformatfilepath)
     * [.discernParser(filepath, [delimiter]](#discernparserfilepath-delimiter)
