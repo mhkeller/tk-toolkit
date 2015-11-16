@@ -14,7 +14,7 @@ A work-in-progress collection of utilities to help with reading, transforming an
 npm install tktk
 ````
 
-# Current functions
+# Functions, See [indian-ocean](https://github.com/mhkeller/indian-ocean) documentation for most updated list
 
 * [Reading data](#reading-data)
     * [.readData(filepath, [delimiter], callback)](#readdatafilepath-delimiter-callback)
